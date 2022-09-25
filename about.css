@@ -12,7 +12,8 @@ body{
 }
 .me-flex{
    padding: 20px 8vw;
-   display: flex;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
    gap: 20px;
    width: 100%;
 
@@ -21,6 +22,10 @@ body{
    width: 500px;
    height: 500px;
    object-fit: cover;
+   border: 2px solid #009;
+   border-bottom: none;
+   border-right: none;
+   padding: 15px 0 0 15px;
 }
 .me-flex p{
    line-height: 25px;
@@ -32,6 +37,9 @@ body{
    text-transform: capitalize;
    font-weight: bold;
    text-decoration: underline;
-   text-decoration-color: #383838;
+   text-decoration-color: #009;
+   text-decoration-color: #009;
+   padding-bottom: 15px;
 }
+
 
