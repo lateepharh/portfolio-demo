@@ -11,10 +11,10 @@
 <body>
    <nav class="navbar">
       <h2>Lateefat</h2>
-      <ul>
-         <li><a href="#">Home</a></li>
-         <li><a href="#" class="activate">About</a></li>
-         <li><a href="#contact">contact</a>
+      <ul class="nav-box">
+         <li><a href="./index.html" target="_blank">Home</a></li>
+         <li><a href="./about.html" class="activate" target="_blank">About</a></li>
+         <li><a href="./contac.html" target="_blank">contact</a>
             <div class="container">     
                <p><a href="tel:+2349068664350">call me</a></p>
                <p><a href="mailto:pelumilateefat299@gmail.com">Mail</a></p>
@@ -33,6 +33,21 @@
             </div>
          </li> 
       </ul>
+      <div id="hamburger">
+         <input type="checkbox" name="check" id="check" class="checkbox">
+         <label for="check" class="toggle-menu">
+            <div class="toggle-line"></div>
+         </label>
+         <div class="compartment">
+            <ul class="com-box">
+               <li><a href="./index.html">Home</a></li>
+               <li><a href="./about.html">About</a></li>
+               <li><a href="./contact" class="activate">contact<a></li>
+               <li><a href="#skills">skills</a></li>
+               <li><a href="#">projects</a></li> 
+            </ul>
+         </div>
+      </div>
    </nav>
    <section class="me">
       <div class="me-flex">

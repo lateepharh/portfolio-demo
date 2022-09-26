@@ -28,7 +28,7 @@ body{
   border-right: none;
   padding: 5px;
 }
-#navbar{
+.navbar ul{
    display: flex;
    list-style: none;
 }.navbar ul li {
@@ -36,7 +36,7 @@ body{
    font-weight: bold;
    position: relative;
 }
-.navbar ul li a {
+.nav-box li a {
    text-decoration: none;
    color: #f5f5f5;
    opacity: 0.5;
@@ -52,7 +52,7 @@ body{
    opacity:1;
    color: #f5f5f5;
 }
-.navbar li a:hover::after{
+.nav-box li a:hover::after{
    content:"";
    width: 40%;
    height: 3px;
@@ -68,7 +68,7 @@ svg{
 
 }
 
-.navbar li a.activate::after{
+.nav-box li a.activate::after{
    content:"";
    width: 40%;
    height: 3px;
@@ -224,7 +224,7 @@ aside{
    text-align: center;
    text-transform: capitalize;
 }
-#hamburger{
+#hamburger, .com-box{
    display: none;
    align-items: center;
 }
@@ -243,58 +243,118 @@ aside{
    .navbar{
       padding: 20px 5vw;
    }
-   #navbar {
+   #hamburger{
+      width:auto;
+      display: block;
+   }
+   .checkbox{
+      display:none;
+      margin-right: auto
+   }
+   .toggle-menu{
+      position:relative;
+      z-index: 5001;
+      width: 6rem;
+      height:3rem;
+      border-radius: 6px;
+      padding:.5rem;
+      margin: 1rem 3rem 1rem 0.5rem ;
+   }
+   .toggle-line{
+      width: 70%;
+      height: 0.2rem;
+      position: absolute;
+      transition: all 0.4s ease;
+      background-color: #f5f5f5;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+   }
+   .toggle-menu::after,.toggle-menu::before{
+      content: "";
+      position: absolute;
+      top: 25%;
+      background-color: #f5f5f5;
+      width: 70%;
+      height: 0.2rem;
+      position: absolute;
+      transition: all 0.4s ease;
+      left: 50%;
+      transform: translate(-50%,-50%);
+   }
+   .toggle-menu::after{
+      top: 75%;
+      background-color: #f5f5f5;
+
+   }
+   .compartment{
+      position: fixed;
+      z-index: 4999;
+      top: 10%;
+      right: 0;
+      width: 300px;
+      height: 50vh;
+      overflow: hidden;
+      transition: all 0.4s;
+      transform: scale(0);
+      padding: 50px 18px;
+      background-color: #009;
+
+   }
+   .checkbox:checked ~ .toggle-menu::before{
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(40deg);
+   }
+   .checkbox:checked ~ .toggle-menu .toggle-line{
+      opacity: 0;
+   }
+   .checkbox:checked ~ .toggle-menu::after{
+      transform: translate(-50%, -50%) rotate(-45deg);
+      top: 50%;
+   }
+   .checkbox:checked ~ .compartment{
+      transform: scale(1);
+   }
+   .com-box{
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: 300px;
-      justify-content: flex-start;
-      position: fixed;
-      top: 0;
-      right: -300px;
-      height: 100vh;
-      width: 300px;
-      background-color: #e3e6f3;
-      box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
-      padding: 80px 0 0 10px;
-      transition: 0.3s ease-in;
-  }
-/* ACTIVE CLASS CALLED IN JS */
-  #navbar.active {
-      right: 0;
-  }
-  #navbar li {
-      margin-bottom: 25px;
-  }
-
-  #hamburger {
-      display: block;
-      align-items: center;
-  }
-
-  #hamburger i {
-      color: #009;
-      font-size: 24px;
-      padding-left: 20px;
-  }
-
-  #close {
-      display: initial;
+      justify-content: center;
+      align-content: center;
+      gap: 15px;
+   }
+   .com-box a {
+      text-decoration: none;
+      color: #f5f5f5;
+      opacity: 0.5;
+      text-transform: capitalize;
+      transition: all .5s ease;
+   }
+   .navbar ul li a:hover, .activate{
+      opacity: 1;
+      color: #f5f5f5; 
+   }
+   .activate{
+      opacity:1;
+      color: #f5f5f5;
+   }
+   .com-box li a:hover::after{
+      content:"";
+      width: 60%;
+      height: 3px;
+      background-color: #f5f5f5;
       position: absolute;
-      top: 30px;
-      left: 30px;
-      color: #222;
-      font-size: 24px;
-  }
-
-  #xs-icon {
-      display: none;
-  }
-
+      bottom: -4px;
+      left: 10px;
+   }
+   .com-box .activate::after{
+      content:"";
+      width: 60%;
+      height: 3px;
+      background-color: #f5f5f5;
+      position: absolute;
+      bottom: -4px;
+      left: 9px;
+   }
    .main{
       flex-direction: column;
       gap: 10px;
@@ -310,9 +370,13 @@ aside{
       order: -1;
    }
 }
-@media screen and (max-width:600px){
-   .navbar{
-      flex-direction: column;
-      gap: 10px;
+@media screen and (max-width:800px){
+   .navbar .nav-box{
+      /* flex-direction: column;
+      gap: 10px; */
+      display: none;
+   }
+   svg{
+      display:none;
    }
 }
