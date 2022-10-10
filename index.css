@@ -330,9 +330,18 @@ aside{
    .com-box a {
       text-decoration: none;
       color: #f5f5f5;
-      opacity: 0.5;
+      opacity: 0.7;
       text-transform: capitalize;
       transition: all .5s ease;
+   }
+   .active{
+      background-color: #f5f5f5;
+      color: #009;
+   }
+   .content{
+      display:none;
+      background-color: #009;
+      
    }
    .navbar ul li a:hover, .activate{
       opacity: 1;

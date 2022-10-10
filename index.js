@@ -7,22 +7,17 @@ btn.forEach((item,i)=>{
       checked= i;
 
    })
-}) 
-const barIcon = document.getElementById('bar')
-const closeIcon = document.getElementById('close')
-const nav = document.getElementById('navbar')
-
-// CLICK EVENTS
-
-// HAMBURGER OPEN
-if (bar) {
-    barIcon.addEventListener('click', () => {
-        nav.classList.add('active')
+}) ;
+var dropdown = document.getElementsByClassName("dropdown");
+var i;
+for(i = 0; i < dropdown.length; i++){
+    dropdown[i].addEventListener("click", ()=>{
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display === "none";
+        }else{
+            content.style.display === "block";
+        }
     })
 }
-// HAMBURGER CLOSE
-if (bar) {
-    closeIcon.addEventListener('click', () => {
-        nav.classList.remove('active')
-    })
-}  
