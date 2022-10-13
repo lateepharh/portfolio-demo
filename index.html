@@ -6,6 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Personal portfolio</title>
    <link rel="stylesheet" href="./index.css">
+   <script src="./index.js" async></script>
    <script src="https://kit.fontawesome.com/54ce8c47a1.js.js"></script>
 </head>
 <body>
@@ -42,11 +43,11 @@
          </label>
          <div class="compartment">
             <ul class="com-box">
-               <li><a href="./index.html">Home</a></li>
+               <li><a href="./index.html" class="activate">Home</a></li>
                <li><a href="./about.html">About</a></li>
-               <li><a href="./contact" class="activate">contact<a></li>
+               <li><a href="./contact">contact<a></li>
                <li><a href="#skills">skills</a></li>
-               <li><a href="#" class="dropdown">projects</a>
+               <li><a href="#project" class="dropdown-btn">Project</a></li>
                <div class="content">
                   <p><a href="https://jelwerry-shop-template.vercel.app/">jewellry template</a></p>
                   <p><a href="https://tailwind-landingpg.vercel.app/">Tailwind-landingpg</a></p>
@@ -55,7 +56,7 @@
                   <p><a href="https://travel-phi-one.vercel.app/">Travel temp</a></p>
                   <p><a href="https://linkedin-page-temp.vercel.app/">Linkedin temp</a></p>
                </div>
-               </li> 
+               
             </ul>
          </div>
       </div>
@@ -122,23 +123,36 @@
       </div>
    </section> -->
    <script>
-      var textWrapper = document.querySelector('.ml16');
-      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+      var dropdown = document.getElementsByClassName("dropdown-btn");
+      var i;
+      for (i = 0; i < dropdown.length; i++) {
+         dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+               dropdownContent.style.display = "none";
+            } else {
+               dropdownContent.style.display = "block";
+           }
+         });
+      }
+      // var textWrapper = document.querySelector('.ml16');
+      // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-      anime.timeline({loop: true})
-        .add({
-          targets: '.ml16 .letter',
-          translateY: [-100,0],
-          easing: "easeOutExpo",
-          duration: 1400,
-          delay: (el, i) => 30 * i
-        }).add({
-          targets: '.ml16',
-           opacity: 0,
-           duration: 1000,
-           easing: "easeOutExpo",
-           delay: 1000
-        });
+      // anime.timeline({loop: true})
+      //   .add({
+      //     targets: '.ml16 .letter',
+      //     translateY: [-100,0],
+      //     easing: "easeOutExpo",
+      //     duration: 1400,
+      //     delay: (el, i) => 30 * i
+      //   }).add({
+      //     targets: '.ml16',
+      //      opacity: 0,
+      //      duration: 1000,
+      //      easing: "easeOutExpo",
+      //      delay: 1000
+      //   });
    </script>
    <script src="./index.js"></script>
 </body>
