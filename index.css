@@ -402,11 +402,6 @@ aside{
    }
 }
 @media screen and (max-width:800px){
-   .main{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-   }
    .navbar .nav-box{
       /* flex-direction: column;
       gap: 10px; */
