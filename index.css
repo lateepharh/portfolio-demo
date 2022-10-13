@@ -402,7 +402,7 @@ aside{
    }
 }
 @media screen and (max-width:800px){
-   body{
+   .main{
       display: flex;
       justify-content: center;
       align-items: center;
