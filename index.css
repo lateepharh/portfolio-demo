@@ -116,7 +116,7 @@ div.container{
    gap: 10px;
    position: absolute;
    height: fit-content;
-   min-width: 160px;
+   min-width: 180px;
    padding: 5px 10px;
    background-color:#009;
    margin-top: 1vh;
