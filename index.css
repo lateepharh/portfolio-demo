@@ -417,7 +417,7 @@ aside{
       align-items: center;
    }
   .project-card img {
-     order:1;
+     order:-1;
   }
 }
 .project-grid{
@@ -445,9 +445,16 @@ aside{
    display:flex;
    flex-direction: column;
    gap:15px;
+
 }
 .project-card aside:nth-child(2){
    font-size:20px;
    font-weight:500;
+   color:black;
+   text-decoration: none;
 
+}
+.project-card h2{
+   color:#121212;
+   text-decoration:none;
 }
